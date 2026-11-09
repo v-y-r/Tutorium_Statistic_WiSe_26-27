@@ -33,7 +33,7 @@ legend("topleft", legend = c("other mammals", "whales", "Homo sapiens"), pch = 1
 #Aufgabe 5: Mittelwert, Standartabwechung und Variationskoeffizient für vier Gattungen
 myord <- subset(brains.df, order %in% c("Rodentia", "Carnivora", "Cetacea", "Primates"))
 
-#alternativ via Matrixnotation
+#alternativ via Matrixnotation --> funktioniert nicht gut, deswegen machen wir das hier per subset()
 myord <- brains.df[c(brains.df$order == "Rodentia" , brains.df$order == "Carnivora" ,
                        brains.df$order == "Cetacea" , brains.df$order == "Primates"), ]
 
@@ -76,7 +76,9 @@ par(mfrow = c(1,3))
 boxplot(Mean_brain_mass_g ~ order, data = myord)
 boxplot(lbrain ~ order, data = myord)
 boxplot(log10(Mean_brain_mass_g) ~ order, data = myord)
-
+#es muss nicht zwingend vorher berechnet werden, dass wir den log10 wollen
+#stattdessen können wir es einfach in das Formel-Argument integrieren
+#dabei müssen wir drauf achten, nur den teil zu logarithmieren, den wir wollen
 
 
 
