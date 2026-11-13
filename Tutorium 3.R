@@ -59,9 +59,9 @@ hist(stats.df[stats.df$Geschlecht == "m", "KG_cm"], main = "", ylab = "", xlab =
      col = "forestgreen", breaks = seq(150, 200, 5))
 
 #und zu guter letzt die Statistik
-c(mean(stats.df$KG_Mutter_cm), sd(stats.df$KG_Mutter_cm), mean(stats.df$KG_Mutter_cm)/sd(stats.df$KG_Mutter_cm))
+c(mean(stats.df$KG_Mutter_cm), sd(stats.df$KG_Mutter_cm), sd(stats.df$KG_Mutter_cm)/mean(stats.df$KG_Mutter_cm))
 
-c(mean(stats.df$KG_Vater_cm), sd(stats.df$KG_Vater_cm), mean(stats.df$KG_Vater_cm)/sd(stats.df$KG_Vater_cm))
+c(mean(stats.df$KG_Vater_cm), sd(stats.df$KG_Vater_cm), sd(stats.df$KG_Vater_cm)/mean(stats.df$KG_Vater_cm))
 
 aggregate(stats.df$KG_cm ~ stats.df$Geschlecht, data=stats.df, function(x) c(m = mean(x), s = sd(x), cv = sd(x)/mean(x)))
 
